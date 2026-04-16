@@ -275,6 +275,17 @@
       line-height: 1;
     }
     #wa-close-chat:hover { color: #fff; }
+
+        /* FAQ Accordion Styles */
+        details summary {
+            list-style: none;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] .faq-chevron {
+            transform: rotate(180deg);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -615,6 +626,71 @@
                 <a href="https://x.com/hey__tri" target="_blank" class="hover:text-pink-600">
                     <i class="fab fa-x-twitter"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQS – Added here, right above the final CTA as requested -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="section-heading text-4xl font-bold text-center mb-4">Frequently Asked Questions</h2>
+            <p class="text-center text-xl text-gray-600 mb-12">Got questions? Here are the answers to the most common ones</p>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <details class="border border-gray-200 rounded-3xl overflow-hidden">
+                    <summary class="flex justify-between items-center px-8 py-6 text-xl font-semibold cursor-pointer hover:bg-pink-50">
+                        <span>Do you bring your own cleaning equipment?</span>
+                        <i class="fas fa-chevron-down text-pink-500 faq-chevron transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+                        No hoover, but yes – I bring my own basic sprays, cloths and supplies. I'm also very happy to use any cleaning products or equipment that you already have at home if you prefer. Just let me know!
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="border border-gray-200 rounded-3xl overflow-hidden">
+                    <summary class="flex justify-between items-center px-8 py-6 text-xl font-semibold cursor-pointer hover:bg-pink-50">
+                        <span>How do I book a cleaning?</span>
+                        <i class="fas fa-chevron-down text-pink-500 faq-chevron transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+                        Super simple! Just message me on WhatsApp with your preferred date and time. I'll reply quickly to confirm availability and get you booked in.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="border border-gray-200 rounded-3xl overflow-hidden">
+                    <summary class="flex justify-between items-center px-8 py-6 text-xl font-semibold cursor-pointer hover:bg-pink-50">
+                        <span>What areas do you cover?</span>
+                        <i class="fas fa-chevron-down text-pink-500 faq-chevron transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+                        I serve Peckham, Dulwich, Camberwell and all surrounding postcodes in South East London (SE15, SE21, SE5 and nearby areas).
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="border border-gray-200 rounded-3xl overflow-hidden">
+                    <summary class="flex justify-between items-center px-8 py-6 text-xl font-semibold cursor-pointer hover:bg-pink-50">
+                        <span>What's your cancellation policy?</span>
+                        <i class="fas fa-chevron-down text-pink-500 faq-chevron transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+                        You can cancel or reschedule for free up to 24 hours before your clean. For shorter notice, just message me and I'll do my best to help.
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details class="border border-gray-200 rounded-3xl overflow-hidden">
+                    <summary class="flex justify-between items-center px-8 py-6 text-xl font-semibold cursor-pointer hover:bg-pink-50">
+                        <span>Are you insured and background checked?</span>
+                        <i class="fas fa-chevron-down text-pink-500 faq-chevron transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+                        Yes, absolutely! I'm fully insured with public liability cover and have a current background check (DBS) so you can book with complete peace of mind.
+                    </div>
+                </details>
             </div>
         </div>
     </section>
