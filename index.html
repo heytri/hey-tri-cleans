@@ -95,6 +95,41 @@
         .tri-font {
             font-family: 'Dancing Script', cursive;
         }
+        /* Inline logo used in text headings */
+        .inline-logo {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.2em;
+            line-height: 1;
+        }
+        .inline-logo .logo-hey {
+            font-family: inherit;
+            font-weight: 900;
+            letter-spacing: -0.08em;
+            color: #ec4899; /* pink-500 */
+        }
+        .inline-logo .logo-cleans {
+            font-family: inherit;
+            font-weight: 700;
+            color: #1f2937; /* gray-800 */
+        }
+        /* On pink background, cleans should be white */
+        .on-pink .inline-logo .logo-cleans {
+            color: #fff;
+        }
+        /* Email link style */
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            color: #db2777;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .email-link:hover {
+            color: #9d174d;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -110,11 +145,16 @@
                 </div>
             </div>
             <!-- Desktop & Tablet Menu -->
-            <div class="hidden md:flex gap-8 text-gray-700 font-medium">
+            <div class="hidden md:flex gap-8 text-gray-700 font-medium items-center">
                 <a href="#services" class="hover:text-pink-600">Services</a>
                 <a href="#reviews" class="hover:text-pink-600">Reviews</a>
                 <a href="#about" class="hover:text-pink-600">About Me</a>
                 <a href="#videos" class="hover:text-pink-600">Videos</a>
+                <!-- EMAIL — navbar -->
+                <a href="mailto:hello@heytricleans.com" class="email-link">
+                    <i class="fas fa-envelope text-base"></i>
+                    hello@heytricleans.com
+                </a>
             </div>
             <!-- WhatsApp button – visible only on md and larger -->
             <div class="hidden md:block">
@@ -143,8 +183,16 @@
                     About Me
                     <span class="text-pink-400 text-xl">→</span>
                 </a>
-                <a onclick="toggleMobileMenu()" href="#videos" class="hover:text-pink-600 py-4 px-2 flex items-center justify-between">
+                <a onclick="toggleMobileMenu()" href="#videos" class="hover:text-pink-600 py-4 px-2 border-b flex items-center justify-between">
                     Videos
+                    <span class="text-pink-400 text-xl">→</span>
+                </a>
+                <!-- EMAIL — mobile menu -->
+                <a href="mailto:hello@heytricleans.com" onclick="toggleMobileMenu()" class="email-link py-4 px-2 flex items-center justify-between">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-envelope"></i>
+                        hello@heytricleans.com
+                    </span>
                     <span class="text-pink-400 text-xl">→</span>
                 </a>
             </div>
@@ -181,7 +229,10 @@
                     <img src="images/me.jpeg" alt="Tri" class="w-full rounded-2xl shadow">
                     <div class="mt-6 text-center">
                         <h2 class="text-4xl font-bold text-pink-600 tri-font">Tri</h2>
-                        <p class="text-xl text-gray-600">Founder of hey__tri cleans</p>
+                        <!-- IMPROVEMENT: logo treatment for 'hey__tri cleans' in founder subtitle -->
+                        <p class="text-xl text-gray-600">
+                            Founder of&nbsp;<span class="inline-logo text-xl"><span class="logo-hey">hey__tri</span>&nbsp;<span class="logo-cleans">cleans</span></span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -209,6 +260,13 @@
                     <i class="fab fa-whatsapp text-3xl"></i>
                     Book on WhatsApp
                 </a>
+                <!-- EMAIL — about section -->
+                <div class="mt-5 flex justify-center">
+                    <a href="mailto:hello@heytricleans.com" class="email-link text-lg">
+                        <i class="fas fa-envelope"></i>
+                        hello@heytricleans.com
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -294,7 +352,10 @@
     <!-- BENEFITS -->
     <section class="py-20 bg-pink-50">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="section-heading text-4xl font-bold text-center mb-12">You're going to love working with hey__tri cleans</h2>
+            <!-- IMPROVEMENT: logo treatment in benefits heading -->
+            <h2 class="section-heading text-4xl font-bold text-center mb-12">
+                You're going to love working with&nbsp;<span class="inline-logo text-4xl" style="vertical-align: baseline;"><span class="logo-hey">hey__tri</span>&nbsp;<span class="logo-cleans">cleans</span></span>
+            </h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-3xl shadow text-center">
                     <div class="text-5xl mb-4">⚡</div>
@@ -377,8 +438,9 @@
                     <h3 class="text-2xl font-semibold mb-2">Bank Transfer</h3>
                     <p class="text-gray-600">Quick BACS or instant transfer</p>
                 </div>
+                <!-- IMPROVEMENT: Bitcoin icon in correct Bitcoin orange (#F7931A) -->
                 <div class="payment-card bg-white p-8 rounded-3xl shadow text-center">
-                    <i class="fab fa-bitcoin text-6xl text-pink-500 mb-6"></i>
+                    <i class="fab fa-bitcoin text-6xl mb-6" style="color: #F7931A;"></i>
                     <h3 class="text-2xl font-semibold mb-2">Bitcoin</h3>
                     <p class="text-gray-600">Pay with BTC – modern &amp; secure</p>
                 </div>
@@ -437,6 +499,13 @@
             </div>
         </div>
         <p class="mt-2">Professional • Friendly • Local to Peckham, Dulwich &amp; Camberwell</p>
+        <!-- EMAIL — footer -->
+        <div class="mt-4">
+            <a href="mailto:hello@heytricleans.com" class="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 transition-colors font-medium text-lg">
+                <i class="fas fa-envelope"></i>
+                hello@heytricleans.com
+            </a>
+        </div>
         <div class="flex justify-center gap-8 mt-8 text-3xl">
             <a href="https://www.tiktok.com/@hey__tri" target="_blank" class="hover:text-pink-400"><i class="fab fa-tiktok"></i></a>
             <a href="YOUR-YOUTUBE-LINK" target="_blank" class="hover:text-pink-400"><i class="fab fa-youtube"></i></a>
