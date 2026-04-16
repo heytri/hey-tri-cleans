@@ -714,6 +714,34 @@
             }
         }
 
+        let waChatOpen = false;
+    function toggleWaChat() {
+      waChatOpen = !waChatOpen;
+      const box = document.getElementById('wa-chat-box');
+      const iconOpen = document.getElementById('wa-icon-open');
+      const iconClose = document.getElementById('wa-icon-close');
+      const badge = document.getElementById('wa-badge');
+
+      if (waChatOpen) {
+        box.classList.add('open');
+        iconOpen.style.display = 'none';
+        iconClose.style.display = 'block';
+        badge.style.display = 'none';
+      } else {
+        box.classList.remove('open');
+        iconOpen.style.display = 'block';
+        iconClose.style.display = 'none';
+      }
+    }
+
+    // Auto-open chat after 8 seconds on first visit
+    setTimeout(() => {
+      if (!waChatOpen && !sessionStorage.getItem('wa-opened')) {
+        toggleWaChat();
+        sessionStorage.setItem('wa-opened', '1');
+      }
+    }, 8000);
+
         // Tailwind config
         tailwind.config = {
             content: ["*"],
