@@ -18,12 +18,10 @@
     <meta property="twitter:title" content="hey__tri cleans | Professional Cleaning in Peckham, Dulwich & Camberwell">
     <meta property="twitter:description" content="Your friendly local professional cleaner. Spotless homes from £20/hr. Book on WhatsApp today!">
     <meta name="twitter:creator" content="@hey__tri">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --wa-green: #25D366;
@@ -36,12 +34,9 @@
             --radius-pill: 9999px;
             --radius-btn: 14px;
         }
-
         * { box-sizing: border-box; }
-
         /* ── TYPOGRAPHY ── */
         .tri-font { font-family: 'Dancing Script', cursive; }
-
         /* ── LOGO ── */
         .logo-mark {
             display: inline-flex;
@@ -61,7 +56,6 @@
         }
         footer .logo-mark .l-cleans { color: #fff; }
         footer .logo-mark .l-hey { color: #f472b6; }
-
         /* ── NAVBAR ── */
         nav { background: #fff; }
         .nav-pill {
@@ -77,16 +71,14 @@
             white-space: nowrap;
         }
         .nav-pill:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
-        .nav-pill.wa   { background: var(--wa-green); color: #fff; }
-        .nav-pill.cal  { background: var(--violet); color: #fff; }
-
+        .nav-pill.wa { background: var(--wa-green); color: #fff; }
+        .nav-pill.cal { background: var(--violet); color: #fff; }
         /* ── HERO ── */
         .hero-bg {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-
         /* ── GENERIC BUTTONS ── */
         .btn {
             display: inline-flex;
@@ -105,15 +97,14 @@
         }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
         .btn:active { transform: translateY(0); }
-        .btn.wa    { background: var(--wa-green); color: #fff; }
+        .btn.wa { background: var(--wa-green); color: #fff; }
         .btn.wa:hover { background: #20ba5a; }
-        .btn.cal   { background: var(--violet); color: #fff; }
+        .btn.cal { background: var(--violet); color: #fff; }
         .btn.cal:hover { background: #6d28d9; }
         .btn.ghost { background: rgba(255,255,255,0.18); border: 2px solid rgba(255,255,255,0.55); color: #fff; }
         .btn.ghost:hover { background: rgba(255,255,255,0.28); }
         .btn.phone { background: var(--blue); color: #fff; }
         .btn.phone:hover { background: #1d4ed8; }
-
         /* ── SERVICE CARDS ── */
         .service-card {
             width: 240px;
@@ -128,10 +119,6 @@
             snap-align: center;
             transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
             flex-shrink: 0;
-        }
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.13);
         }
         .service-card img { width: 100%; height: 220px; object-fit: cover; flex-shrink: 0; }
         .service-card .card-body { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
@@ -148,7 +135,6 @@
             font-size: 0.8rem;
             font-weight: 700;
         }
-
         /* ── CAROUSEL ── */
         .carousel-wrap {
             overflow-x: auto;
@@ -182,7 +168,6 @@
         .carousel-arrow:hover { background: #fdf2f8; box-shadow: 0 4px 16px rgba(0,0,0,0.14); transform: translateY(-50%) scale(1.05); }
         .carousel-arrow.left { left: -22px; }
         .carousel-arrow.right { right: -22px; }
-
         /* ── BENEFIT CARDS ── */
         .benefit-card {
             background: #fff;
@@ -204,7 +189,6 @@
             margin: 0 auto 1.25rem;
             font-size: 1.75rem;
         }
-
         /* ── REVIEW CARDS ── */
         .review-card {
             background: #fff;
@@ -216,7 +200,6 @@
         }
         .review-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.1); }
         .stars { color: #f59e0b; letter-spacing: 2px; }
-
         /* ── PAYMENT ICONS ── */
         .payment-card {
             background: #fff;
@@ -237,7 +220,6 @@
             justify-content: center;
             margin: 0 auto 1.25rem;
         }
-
         /* ── FAQ ── */
         details { border: 1.5px solid #e5e7eb; border-radius: var(--radius-card); overflow: hidden; background: #fff; transition: box-shadow 0.2s; }
         details[open] { box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-color: #fbcfe8; }
@@ -249,7 +231,6 @@
         .faq-chevron { color: var(--pink-deep); transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
         details[open] .faq-chevron { transform: rotate(180deg); }
         .faq-body { padding: 0 2rem 2rem; color: #374151; line-height: 1.7; }
-
         /* ── CTA PILLS (About + footer sections) ── */
         .cta-pill {
             display: inline-flex;
@@ -265,15 +246,14 @@
             white-space: nowrap;
         }
         .cta-pill:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-        .cta-pill.wa    { background: var(--wa-green); color: #fff; }
+        .cta-pill.wa { background: var(--wa-green); color: #fff; }
         .cta-pill.wa:hover { background: #20ba5a; }
-        .cta-pill.call  { background: var(--blue); color: #fff; }
+        .cta-pill.call { background: var(--blue); color: #fff; }
         .cta-pill.call:hover { background: #1d4ed8; }
-        .cta-pill.cal   { background: var(--violet); color: #fff; }
+        .cta-pill.cal { background: var(--violet); color: #fff; }
         .cta-pill.cal:hover { background: #6d28d9; }
         .cta-pill.email { background: #f9fafb; color: #374151; border: 1.5px solid #e5e7eb; }
         .cta-pill.email:hover { background: #fff; border-color: #d1d5db; }
-
         /* ── TRUST BADGES ── */
         .trust-chip {
             display: inline-flex;
@@ -287,10 +267,8 @@
             font-weight: 600;
             color: #374151;
         }
-
         /* ── MOBILE NAV ── */
         #mobile-menu { transition: all 0.3s ease; }
-
         /* ── WA WIDGET ── */
         #wa-widget {
             position: fixed;
@@ -315,7 +293,7 @@
         #wa-chat-box.open { display: flex; }
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
+            to { opacity: 1; transform: translateY(0); }
         }
         #wa-chat-header {
             background: var(--wa-green);
@@ -351,9 +329,9 @@
             cursor: pointer; text-align: center; transition: background 0.2s, color 0.2s;
             text-decoration: none; display: block;
         }
-        .wa-btn.wa-q    { background: #fff; border: 1.5px solid var(--wa-green); color: var(--wa-dark); }
+        .wa-btn.wa-q { background: #fff; border: 1.5px solid var(--wa-green); color: var(--wa-dark); }
         .wa-btn.wa-q:hover { background: var(--wa-green); color: #fff; }
-        .wa-btn.wa-cal  { background: #fff; border: 1.5px solid var(--violet); color: var(--violet); }
+        .wa-btn.wa-cal { background: #fff; border: 1.5px solid var(--violet); color: var(--violet); }
         .wa-btn.wa-cal:hover { background: var(--violet); color: #fff; }
         .wa-btn.wa-call { background: #fff; border: 1.5px solid var(--blue); color: var(--blue); }
         .wa-btn.wa-call:hover { background: var(--blue); color: #fff; }
@@ -372,7 +350,6 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-size: 10px; font-weight: 700; color: #fff; border: 2px solid #fff;
         }
-
         /* Mobile improvements */
         @media (max-width: 767px) {
             .hero-title { font-size: 2.6rem !important; line-height: 1.1; }
@@ -380,23 +357,21 @@
             details summary { padding: 1.25rem 1.25rem; font-size: 0.95rem; }
             .faq-body { padding: 0 1.25rem 1.5rem; }
         }
-
         /* Smooth scroll */
         html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-white font-sans">
-
 <!-- ══════════════════ NAVBAR ══════════════════ -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#" class="logo-mark text-4xl"><span class="l-hey">hey__tri</span><span class="l-cleans"> cleans</span></a>
         <div class="hidden md:flex gap-6 text-gray-600 font-medium text-sm items-center">
             <a href="#services" class="hover:text-pink-600 transition-colors">Services</a>
-            <a href="#reviews"  class="hover:text-pink-600 transition-colors">Reviews</a>
-            <a href="#about"    class="hover:text-pink-600 transition-colors">About</a>
-            <a href="#videos"   class="hover:text-pink-600 transition-colors">Videos</a>
-            <a href="#faq"      class="hover:text-pink-600 transition-colors">FAQs</a>
+            <a href="#reviews" class="hover:text-pink-600 transition-colors">Reviews</a>
+            <a href="#about" class="hover:text-pink-600 transition-colors">About</a>
+            <a href="#videos" class="hover:text-pink-600 transition-colors">Videos</a>
+            <a href="#faq" class="hover:text-pink-600 transition-colors">FAQs</a>
         </div>
         <div class="hidden md:flex items-center gap-3">
             <a href="https://cal.com/hey-tricleans" target="_blank" class="nav-pill cal">
@@ -414,10 +389,10 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1 text-base font-medium text-gray-700">
             <a onclick="toggleMobileMenu()" href="#services" class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">Services <span class="text-pink-400">›</span></a>
-            <a onclick="toggleMobileMenu()" href="#reviews"  class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">Reviews <span class="text-pink-400">›</span></a>
-            <a onclick="toggleMobileMenu()" href="#about"    class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">About Me <span class="text-pink-400">›</span></a>
-            <a onclick="toggleMobileMenu()" href="#videos"   class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">Videos <span class="text-pink-400">›</span></a>
-            <a onclick="toggleMobileMenu()" href="#faq"      class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">FAQs <span class="text-pink-400">›</span></a>
+            <a onclick="toggleMobileMenu()" href="#reviews" class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">Reviews <span class="text-pink-400">›</span></a>
+            <a onclick="toggleMobileMenu()" href="#about" class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">About Me <span class="text-pink-400">›</span></a>
+            <a onclick="toggleMobileMenu()" href="#videos" class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">Videos <span class="text-pink-400">›</span></a>
+            <a onclick="toggleMobileMenu()" href="#faq" class="hover:text-pink-600 py-3 px-2 border-b border-gray-50 flex items-center justify-between">FAQs <span class="text-pink-400">›</span></a>
             <a href="https://wa.me/447786817644?text=Hi%20Tri%2C%20I%20would%20like%20to%20book%20a%20clean%20with%20you" onclick="toggleMobileMenu()" target="_blank" class="py-3 px-2 border-b border-gray-50 flex items-center gap-3 text-[#128C7E] font-semibold">
                 <i class="fab fa-whatsapp text-[#25D366] text-xl"></i> Message on WhatsApp <span class="ml-auto text-pink-400">›</span>
             </a>
@@ -433,7 +408,6 @@
         </div>
     </div>
 </nav>
-
 <!-- ══════════════════ HERO ══════════════════ -->
 <header class="hero-bg relative flex items-center min-h-[620px] md:min-h-[700px]" style="background-image: url('images/banner.jpeg');">
     <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/55"></div>
@@ -461,7 +435,6 @@
         </div>
     </div>
 </header>
-
 <!-- ══════════════════ ABOUT ══════════════════ -->
 <section id="about" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-start">
@@ -478,7 +451,6 @@
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">No agencies. Just one<br>trusted person who cares.</h2>
             <p class="text-gray-600 leading-relaxed">Hi! I'm Tri, a professional domestic cleaner serving South East London. I offer reliable residential cleaning from £20/hr across Peckham, Dulwich and Camberwell — and I clean to a consistently high standard, every single visit.</p>
             <p class="mt-4 text-gray-600 leading-relaxed">When you book with me, you're dealing directly with me — not a faceless agency. I remember your home, your preferences, and I show up when I say I will.</p>
-
             <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex items-start gap-3">
                     <div class="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
@@ -499,7 +471,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="mt-9">
                 <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Get in touch or book</p>
                 <div class="grid grid-cols-2 gap-3">
@@ -520,7 +491,6 @@
         </div>
     </div>
 </section>
-
 <!-- ══════════════════ SERVICES ══════════════════ -->
 <section id="services" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
@@ -595,7 +565,7 @@
             <button onclick="scrollCarousel(-260)" class="carousel-arrow left hidden md:flex">
                 <i class="fas fa-chevron-left" style="font-size:14px;"></i>
             </button>
-            <button onclick="scrollCarousel(260)"  class="carousel-arrow right hidden md:flex">
+            <button onclick="scrollCarousel(260)" class="carousel-arrow right hidden md:flex">
                 <i class="fas fa-chevron-right" style="font-size:14px;"></i>
             </button>
         </div>
@@ -604,7 +574,6 @@
         </p>
     </div>
 </section>
-
 <!-- ══════════════════ BENEFITS ══════════════════ -->
 <section class="py-20 bg-pink-50">
     <div class="max-w-6xl mx-auto px-6">
@@ -630,7 +599,6 @@
         </div>
     </div>
 </section>
-
 <!-- ══════════════════ REVIEWS ══════════════════ -->
 <section id="reviews" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
@@ -682,14 +650,12 @@
         </div>
     </div>
 </section>
-
 <!-- ══════════════════ PAYMENT ══════════════════ -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-5xl mx-auto px-6">
         <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-2">Payment Methods</h2>
         <p class="text-center text-gray-500 mb-12">Flexible options — payment taken after the clean</p>
         <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-
             <!-- Cash -->
             <div class="payment-card">
                 <div class="payment-icon-wrap bg-emerald-50">
@@ -706,7 +672,6 @@
                 <h3 class="text-lg font-bold mb-1">Cash</h3>
                 <p class="text-gray-400 text-sm">Pay in cash on the day</p>
             </div>
-
             <!-- Bank Transfer -->
             <div class="payment-card">
                 <div class="payment-icon-wrap bg-blue-50">
@@ -714,7 +679,7 @@
                         <rect x="4" y="29" width="30" height="3.5" rx="1.5" fill="#bfdbfe"/>
                         <rect x="4" y="15" width="30" height="3" rx="1" fill="#93c5fd"/>
                         <polygon points="19,5 34,15 4,15" fill="#2563eb" opacity="0.85"/>
-                        <rect x="7"  y="18" width="4" height="11" rx="1" fill="#3b82f6"/>
+                        <rect x="7" y="18" width="4" height="11" rx="1" fill="#3b82f6"/>
                         <rect x="17" y="18" width="4" height="11" rx="1" fill="#3b82f6"/>
                         <rect x="27" y="18" width="4" height="11" rx="1" fill="#3b82f6"/>
                     </svg>
@@ -722,7 +687,6 @@
                 <h3 class="text-lg font-bold mb-1">Bank Transfer</h3>
                 <p class="text-gray-400 text-sm">Quick BACS or instant transfer</p>
             </div>
-
             <!-- Bitcoin -->
             <div class="payment-card">
                 <div class="payment-icon-wrap" style="background:#fff7ed;">
@@ -735,12 +699,10 @@
                 <h3 class="text-lg font-bold mb-1">Bitcoin</h3>
                 <p class="text-gray-400 text-sm">Pay with BTC — modern &amp; secure</p>
             </div>
-
         </div>
         <p class="text-center text-xs text-gray-400 mt-8">Choose whichever method works best for you</p>
     </div>
 </section>
-
 <!-- ══════════════════ VIDEOS ══════════════════ -->
 <section id="videos" class="py-20 bg-white">
     <div class="max-w-xs mx-auto px-4">
@@ -761,14 +723,12 @@
         </div>
     </div>
 </section>
-
 <!-- ══════════════════ FAQs ══════════════════ -->
 <section id="faq" class="py-20 bg-gray-50">
     <div class="max-w-3xl mx-auto px-6">
         <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-2">Frequently Asked Questions</h2>
         <p class="text-center text-gray-500 mb-12">Got questions? I've got answers.</p>
         <div class="space-y-4">
-
             <details>
                 <summary>
                     Do you bring your own cleaning equipment?
@@ -778,7 +738,6 @@
                     No hoover, but yes — I bring my own basic sprays, cloths and supplies. I'm also very happy to use any products or equipment you already have at home if you prefer. Just let me know!
                 </div>
             </details>
-
             <details>
                 <summary>
                     How do I book?
@@ -802,7 +761,6 @@
                     </ul>
                 </div>
             </details>
-
             <details>
                 <summary>
                     How do I check your availability?
@@ -812,7 +770,6 @@
                     The quickest way is the calendar at <a href="https://cal.com/hey-tricleans" target="_blank" class="text-violet-600 font-semibold underline">cal.com/hey-tricleans</a> — you'll see open slots in real time. If you need a slot that isn't showing, just <a href="https://wa.me/447786817644?text=Hi%20Tri%2C%20I%20have%20a%20question%20about%20your%20availability" target="_blank" class="text-[#128C7E] font-semibold underline">WhatsApp me</a> and I'll do my best.
                 </div>
             </details>
-
             <details>
                 <summary>
                     What areas do you cover?
@@ -822,7 +779,6 @@
                     I cover Peckham, Dulwich, Camberwell and all surrounding postcodes in South East London — SE15, SE21, SE5 and nearby areas.
                 </div>
             </details>
-
             <details>
                 <summary>
                     What's your cancellation policy?
@@ -832,11 +788,9 @@
                     Free cancellation or rescheduling up to 24 hours before your clean. For shorter notice, just message me — I'll always try to help.
                 </div>
             </details>
-
         </div>
     </div>
 </section>
-
 <!-- ══════════════════ FINAL CTA ══════════════════ -->
 <section class="bg-pink-600 py-20 text-center text-white">
     <h2 class="text-4xl md:text-5xl font-bold mb-3">Ready for a sparkling home?</h2>
@@ -854,7 +808,6 @@
     </div>
     <p class="mt-8 text-pink-200 text-sm">Or email: <a href="mailto:heytri33@gmail.com" class="underline text-white font-medium hover:text-pink-100 transition-colors">heytri33@gmail.com</a></p>
 </section>
-
 <!-- ══════════════════ FOOTER ══════════════════ -->
 <footer class="bg-gray-900 text-white py-12 text-center">
     <a href="#" class="logo-mark text-4xl"><span class="l-hey">hey__tri</span><span class="l-cleans"> cleans</span></a>
@@ -880,7 +833,6 @@
     </div>
     <p class="text-xs mt-10 text-gray-600">© 2026 hey__tri cleans</p>
 </footer>
-
 <!-- ══════════════════ WA WIDGET ══════════════════ -->
 <div id="wa-widget">
     <div id="wa-chat-box">
@@ -915,13 +867,11 @@
         <i class="fas fa-xmark text-white" id="wa-icon-close" style="font-size:24px; display:none;"></i>
     </button>
 </div>
-
 <script>
     /* ── CAROUSEL ── */
     function scrollCarousel(offset) {
         document.getElementById('carousel').scrollBy({ left: offset, behavior: 'smooth' });
     }
-
     /* ── MOBILE MENU ── */
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
@@ -929,15 +879,14 @@
         menu.classList.toggle('hidden');
         icon.className = menu.classList.contains('hidden') ? 'fas fa-bars' : 'fas fa-xmark';
     }
-
     /* ── WA WIDGET ── */
     let waOpen = false;
     function toggleWaChat() {
         waOpen = !waOpen;
-        const box      = document.getElementById('wa-chat-box');
+        const box = document.getElementById('wa-chat-box');
         const iconOpen = document.getElementById('wa-icon-open');
         const iconClose= document.getElementById('wa-icon-close');
-        const badge    = document.getElementById('wa-badge');
+        const badge = document.getElementById('wa-badge');
         if (waOpen) {
             box.classList.add('open');
             iconOpen.style.display = 'none';
@@ -949,7 +898,6 @@
             iconClose.style.display = 'none';
         }
     }
-
     /* Auto-open after 8 s on first visit */
     setTimeout(() => {
         if (!waOpen && !sessionStorage.getItem('wa-opened')) {
@@ -957,7 +905,6 @@
             sessionStorage.setItem('wa-opened', '1');
         }
     }, 8000);
-
     tailwind.config = { content: ["*"] };
 </script>
 </body>
