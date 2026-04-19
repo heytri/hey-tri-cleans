@@ -150,6 +150,9 @@
             font-weight: 700;
         }
         /* ── CAROUSEL ── */
+        .carousel-outer {
+            position: relative;
+        }
         .carousel-wrap {
             overflow-x: auto;
             display: flex;
@@ -159,11 +162,21 @@
             padding-bottom: 1.5rem;
             scroll-snap-type: x mandatory;
         }
+        /* On desktop (md+), center cards when they don't overflow */
+        @media (min-width: 768px) {
+            .carousel-wrap {
+                justify-content: center;
+            }
+            /* When overflow is detected via JS, switch back to flex-start so scrolling works */
+            .carousel-wrap.overflows {
+                justify-content: flex-start;
+            }
+        }
         .carousel-wrap::-webkit-scrollbar { display: none; }
         .carousel-arrow {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-calc(50% + 0.75rem)); /* offset for padding-bottom on wrap */
             background: #fff;
             border: 1.5px solid #e5e7eb;
             color: var(--pink-deep);
@@ -176,10 +189,17 @@
             font-size: 1.1rem;
             cursor: pointer;
             z-index: 20;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+            transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            /* Hidden by default — JS reveals them only when content overflows */
+            opacity: 0;
+            pointer-events: none;
         }
-        .carousel-arrow:hover { background: #fdf2f8; box-shadow: 0 4px 16px rgba(0,0,0,0.14); transform: translateY(-50%) scale(1.05); }
+        .carousel-arrow.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .carousel-arrow:hover { background: #fdf2f8; box-shadow: 0 4px 16px rgba(0,0,0,0.14); }
         .carousel-arrow.left { left: -22px; }
         .carousel-arrow.right { right: -22px; }
         /* ── BENEFIT CARDS ── */
@@ -370,6 +390,8 @@
             .section-title { font-size: 2rem !important; }
             details summary { padding: 1.25rem 1.25rem; font-size: 0.95rem; }
             .faq-body { padding: 0 1.25rem 1.5rem; }
+            /* Hide arrows entirely on mobile — touch scroll handles it */
+            .carousel-arrow { display: none !important; }
         }
         /* Smooth scroll */
         html { scroll-behavior: smooth; }
@@ -511,7 +533,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <h2 class="section-title text-4xl font-bold text-center mb-2">My Cleaning Services</h2>
         <p class="text-center text-gray-500 mb-12">Reliable, friendly cleaning in Peckham, Dulwich &amp; Camberwell</p>
-        <div class="relative px-4 md:px-12">
+        <div class="relative px-4 md:px-12 carousel-outer" id="carousel-outer">
             <div id="carousel" class="carousel-wrap">
                 <!-- Card 1 -->
                 <div class="service-card">
@@ -531,24 +553,6 @@
                         <span class="price-badge">£21/hr · 3 hr min</span>
                     </div>
                 </div>
-                <!-- Card 3
-                <div class="service-card">
-                    <img src="images/kitchen.jpeg" alt="One-off Cleaning">
-                    <div class="card-body">
-                        <h3>One-off Cleaning</h3>
-                        <p>Move-in, move-out, special occasions or just a reset.</p>
-                        <span class="price-badge">£25/hr · 3 hr min</span>
-                    </div>
-                </div> -->
-                <!-- Card 4
-                <div class="service-card">
-                    <img src="images/bathroom.jpeg" alt="End of Tenancy Cleaning">
-                    <div class="card-body">
-                        <h3>End of Tenancy Cleaning</h3>
-                        <p>Thorough deep clean to help you get your full deposit back.</p>
-                        <span class="price-badge">From £220 · quote by size</span>
-                    </div>
-                </div> -->
                 <!-- Card 5 -->
                 <div class="service-card">
                     <img src="images/airbnb.jpeg" alt="Airbnb Turnover Cleaning">
@@ -567,20 +571,12 @@
                         <span class="price-badge">From £15 per load</span>
                     </div>
                 </div>
-                <!-- Card 7
-                <div class="service-card">
-                    <img src="images/mop.jpeg" alt="Same Day / Emergency Cleaning">
-                    <div class="card-body">
-                        <h3>Same Day / Emergency</h3>
-                        <p>Quick response when you need it fast — subject to availability.</p>
-                        <span class="price-badge">£28/hr</span>
-                    </div>
-                </div> -->
             </div>
-            <button onclick="scrollCarousel(-260)" class="carousel-arrow left hidden md:flex">
+            <!-- Arrows: hidden by default, shown by JS only when carousel overflows -->
+            <button onclick="scrollCarousel(-260)" class="carousel-arrow left" id="arrow-left" aria-label="Scroll left">
                 <i class="fas fa-chevron-left" style="font-size:14px;"></i>
             </button>
-            <button onclick="scrollCarousel(260)" class="carousel-arrow right hidden md:flex">
+            <button onclick="scrollCarousel(260)" class="carousel-arrow right" id="arrow-right" aria-label="Scroll right">
                 <i class="fas fa-chevron-right" style="font-size:14px;"></i>
             </button>
         </div>
@@ -887,6 +883,43 @@
     function scrollCarousel(offset) {
         document.getElementById('carousel').scrollBy({ left: offset, behavior: 'smooth' });
     }
+
+    /**
+     * Check if the carousel content overflows its container.
+     * On desktop (md+) only — on mobile we rely on touch scroll and hide arrows via CSS.
+     * If it overflows: show arrows, switch justify to flex-start so scrolling works.
+     * If it fits: hide arrows, keep justify-content: center.
+     */
+    function updateCarouselArrows() {
+        const carousel = document.getElementById('carousel');
+        const arrowLeft = document.getElementById('arrow-left');
+        const arrowRight = document.getElementById('arrow-right');
+
+        // Only run arrow logic on desktop (≥768px)
+        if (window.innerWidth < 768) return;
+
+        const overflows = carousel.scrollWidth > carousel.clientWidth + 2; // +2 for sub-pixel rounding
+
+        if (overflows) {
+            carousel.classList.add('overflows');
+            arrowLeft.classList.add('visible');
+            arrowRight.classList.add('visible');
+        } else {
+            carousel.classList.remove('overflows');
+            arrowLeft.classList.remove('visible');
+            arrowRight.classList.remove('visible');
+        }
+    }
+
+    // Run on load and on resize
+    window.addEventListener('load', updateCarouselArrows);
+    window.addEventListener('resize', updateCarouselArrows);
+
+    // Also run after images load (they affect scrollWidth)
+    document.querySelectorAll('.service-card img').forEach(img => {
+        img.addEventListener('load', updateCarouselArrows);
+    });
+
     /* ── MOBILE MENU ── */
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
